@@ -1,11 +1,9 @@
-version: '3.8'
-
 services:
   model_server:
     image: openvino/model_server:latest
     container_name: model_server
     volumes:
-      - ./models:/models:ro
+      - ./models:/models
     ports:
       - "9000:9000"  # gRPC port
       - "9001:9001"  # REST port
@@ -14,4 +12,4 @@ services:
       --model_name resnet-50
       --port 9000
       --rest_port 9001
-      --shape auto
+      --log_level DEBUG
