@@ -8,8 +8,8 @@ services:
       - "9000:9000"  # gRPC port
       - "9001:9001"  # REST port
     command: >
-      --model_path /models/resnet-50-pytorch
-      --model_name resnet-50
+      --model_path /models/model
+      --model_name resnet
       --port 9000
       --rest_port 9001
       --log_level DEBUG
