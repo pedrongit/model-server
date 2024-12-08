@@ -1,0 +1,8 @@
+apple
+banana
+cherry
+date
+beans
+rice
+peanuts
+coconut

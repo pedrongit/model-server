@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  model_server:
+    image: openvino/model_server:latest
+    container_name: model_server
+    volumes:
+      - ./models:/models:ro
+    ports:
+      - "9000:9000"  # gRPC port
+      - "9001:9001"  # REST port
+    command: >
+      --model_path /models/resnet-50-pytorch
+      --model_name resnet-50
+      --port 9000
+      --rest_port 9001
+      --shape auto
